@@ -152,7 +152,7 @@
 
   function periodDescription(period) {
     if (period === 'Morning') {
-      return 'Registration, inauguration & sessions';
+      return 'Registration, Inauguration & Sessions';
     }
 
     return 'Conversations, networking & ecosystem support';
@@ -205,8 +205,8 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
     <div class="agenda-heading">
       <div>
-        <span class="section-index">07</span>
-        <p class="section-eyebrow">Programme</p>
+        <!-- <span class="section-index">07</span> -->
+        <!-- <p class="section-eyebrow">Programme</p> -->
         <h2 class="section-title">Agenda</h2>
       </div>
 
