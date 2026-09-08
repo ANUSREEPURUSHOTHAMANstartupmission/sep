@@ -7,7 +7,7 @@ import Speakers from "../components/Speakers.svelte";
 
 <Layout title="Social Entrepreneurship Conclave 2026 | Kerala Startup Mission">
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f6efe1] text-[var(--event-text)] backdrop-blur-xl">
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[var(--event-cream)]/90 text-[var(--event-text)] backdrop-blur-xl">
   <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 md:px-8 lg:px-10">
     <a href="#top" class="shrink-0">
       <img src="/img/logo.svg" alt="Kerala Startup Mission" class="w-24 md:w-28" />
@@ -34,7 +34,7 @@ import Speakers from "../components/Speakers.svelte";
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-black/10 bg-[#f6efe1] px-5 pb-6 pt-4 lg:hidden">
+  <div id="mobile-menu" class="hidden border-t border-black/10 bg-[var(--event-cream)] px-5 pb-6 pt-4 lg:hidden">
     <nav class="flex flex-col">
       <a href="#about" class="mobile-nav-link">About</a>
       <a href="#initiatives" class="mobile-nav-link">Initiatives</a>
@@ -56,8 +56,18 @@ import Speakers from "../components/Speakers.svelte";
     <div class="grid items-center gap-16 lg:grid-cols-[1.08fr_.92fr]">
 
       <div class="reveal">
-       
-        <p class="mb-4 text-[11px] font-bold uppercase tracking-[.28em] text-[var(--event-orange)] hidden">
+        <div class="mb-7 flex flex-wrap items-center gap-3">
+          <span class="event-pill">
+            <span class="event-pill-dot"></span>
+            Kerala Startup Mission
+          </span>
+
+          <span class="event-pill event-pill-muted">
+            Social Impact · Entrepreneurship
+          </span>
+        </div>
+
+        <p class="mb-4 text-[11px] font-bold uppercase tracking-[.28em] text-[var(--event-orange)]">
           September 30 · Thiruvananthapuram
         </p>
 
@@ -80,9 +90,6 @@ import Speakers from "../components/Speakers.svelte";
 
           <a href="#agenda" class="event-secondary-btn">View Programme</a>
         </div>
-        <div class="pt-5">
-            <Countdown date="2026-09-30T09:00" client:load />
-          </div>
 
         <div class="mt-12 grid max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/5 sm:grid-cols-2">
           <div class="event-meta-card event-meta-card-blue">
@@ -97,45 +104,17 @@ import Speakers from "../components/Speakers.svelte";
         </div>
       </div>
 
-      
-    </div>
-  </div>
-
-  <div class="marquee-strip absolute inset-x-0 bottom-0 overflow-hidden border-t border-black/10 py-4">
-    <div class="marquee-track">
-      <div class="marquee-content">
-        <span>Collaboration</span><i></i>
-        <span>Knowledge Exchange</span><i></i>
-        <span>Mentorship</span><i></i>
-        <span>Market Access</span><i></i>
-        <span>Partnerships</span><i></i>
-      </div>
-
-      <div class="marquee-content" aria-hidden="true">
-        <span>Collaboration</span><i></i>
-        <span>Knowledge Exchange</span><i></i>
-        <span>Mentorship</span><i></i>
-        <span>Market Access</span><i></i>
-        <span>Partnerships</span><i></i>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="relative overflow-hidden bg-white py-24 lg:py-32 my-auto">
-  <div class="about-orb" aria-hidden="true"></div>
-
-  <div class="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-10 my-auto">
-    <div class="grid gap-14 lg:grid-cols-[.72fr_1.28fr] lg:gap-24 my-auto">
-      <div class="reveal my-auto">
-
-       
-        <div class="relative reveal" style="animation-delay:.08s">
+      <div class="relative reveal" style="animation-delay:.08s">
         <span class="hero-note hero-note-a">People · Ideas ·<br />Enterprise · Impact</span>
         <span class="hero-note hero-note-b">A more inclusive<br />tomorrow ↗</span>
 
         <div class="event-visual-card">
           <div class="mb-6 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-[.18em] text-[var(--event-purple)]">One ecosystem</span>
+              <h2 class="mt-2 text-xl font-bold">Connected by impact.</h2>
+            </div>
+
             <div class="h-2.5 w-2.5 rounded-full bg-[var(--event-orange)] shadow-[0_0_0_7px_rgba(255,107,71,.15)]"></div>
           </div>
 
@@ -194,18 +173,51 @@ import Speakers from "../components/Speakers.svelte";
             </g>
           </svg>
 
-          
+          <div class="mt-5 border-t border-black/10 pt-5">
+            <Countdown date="2026-09-30T09:00" client:load />
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="marquee-strip absolute inset-x-0 bottom-0 overflow-hidden border-t border-black/10 py-4">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
       </div>
 
+      <div class="marquee-content" aria-hidden="true">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="relative overflow-hidden bg-white py-24 lg:py-32">
+  <div class="about-orb" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
+    <div class="grid gap-14 lg:grid-cols-[.72fr_1.28fr] lg:gap-24">
       <div class="reveal">
         <span class="section-kicker">About</span>
-         <h2 class="event-section-title pb-6">
+
+        <h2 class="event-section-title mt-5">
           Where purpose meets
           <span class="text-grad-blue-purple">enterprise.</span>
         </h2>
-        <p class="text-sm leading-7 text-[#667085]">
+      </div>
+
+      <div class="reveal">
+        <p class="text-xl font-medium leading-[1.65] text-[#0a1020] md:text-2xl">
           The Social Entrepreneurship Conclave 2026 is a platform designed to
           bring together social entrepreneurs, startups, investors, NGOs,
           government, academia, communities, and ecosystem partners to
@@ -217,7 +229,7 @@ import Speakers from "../components/Speakers.svelte";
           their impact and build home-grown global brands from Kerala.
         </p>
 
-        <div class="mt-6 grid gap-8 md:grid-cols-2">
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
           <p class="text-sm leading-7 text-[#667085]">
             The conclave will facilitate knowledge exchange, partnerships,
             mentor connect, product showcase and market linkages, enabling
@@ -235,7 +247,7 @@ import Speakers from "../components/Speakers.svelte";
       </div>
     </div>
 
-    <div class="event-quote reveal mt-20 hidden">
+    <div class="event-quote reveal mt-20">
       <span>“</span>
 
       <p>
@@ -375,7 +387,7 @@ import Speakers from "../components/Speakers.svelte";
   </div>
 </section>
 
-<section class="objectives-gradient relative hidden pt-24 text-white lg:py-32">
+<section id="objectives" class="objectives-gradient relative overflow-hidden py-24 text-white lg:py-32">
   <div class="objective-ring objective-ring-one"></div>
   <div class="objective-ring objective-ring-two"></div>
 
@@ -443,56 +455,6 @@ import Speakers from "../components/Speakers.svelte";
       </div>
     </div>
   </div>
-</section>
-
-
-<section id="objectives" class="bg-white ">
-  <div class="mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
-    <span class="section-kicker reveal">Our Objectives</span>
-   <h2 class="mt-5 font-['Space_Grotesk'] text-[clamp(2.8rem,5vw,5rem)] font-bold leading-[.98] tracking-[-.055em]">
-          Connections that become
-          <span class="text-[var(--event-gold)]">impact.</span>
-        </h2>
-
-  <div class="objectives-strip mt-12">
-    <article class="objective-block objective-block-1 reveal">
-      <h3>Connect</h3>
-      <p>With changemakers and ecosystem leaders.</p>
-      
-    </article>
-
-    <article class="objective-block objective-block-2 reveal">
-      <h3>Learn</h3>
-      <p>From inspiring sessions and networking.</p>
-      
-    </article>
-
-    <article class="objective-block objective-block-3 reveal">
-      <h3>Collaborate</h3>
-      <p>With partners and like-minded social entrepreneurs.</p>
-      
-    </article>
-
-    <article class="objective-block objective-block-4 reveal">
-      <h3>Showcase</h3>
-      <p>Innovative solutions creating real social impact.</p>
-      
-    </article>
-
-    <article class="objective-block objective-block-5 reveal">
-      <h3>Sustain</h3>
-      <p>Build a better future through sustainable enterprise.</p>
-      
-    </article>
-
-    <article class="objective-block objective-block-6 reveal">
-      <h3>Empower</h3>
-      <p>Communities and drive inclusive growth.</p>
-      
-    </article>
-  </div>
-  </div>
-
 </section>
 
 <section id="highlights" class="bg-white py-24 lg:py-32">
@@ -571,7 +533,7 @@ import Speakers from "../components/Speakers.svelte";
   <Agenda client:load />
 </section>
 
-<section class="px-5 pb-10 md:px-8 lg:px-10 bg-white">
+<section class="px-5 pb-10 md:px-8 lg:px-10">
   <div class="cta-gradient relative mx-auto max-w-7xl overflow-hidden rounded-[32px] px-6 py-16 text-white md:px-12 lg:px-16 lg:py-20">
     <div class="cta-glow cta-glow-a"></div>
     <div class="cta-glow cta-glow-b"></div>
@@ -1293,7 +1255,7 @@ import Speakers from "../components/Speakers.svelte";
         sans-serif;
 
       font-size:
-        clamp(2.4rem,4vw,4.6rem);
+        clamp(2.6rem,5vw,4.8rem);
 
       line-height: 1;
 
@@ -1621,9 +1583,9 @@ import Speakers from "../components/Speakers.svelte";
        OBJECTIVES
     ===================================== */
 
-.objectives-gradient {
-  background: linear-gradient(135deg, var(--event-purple-deep) 0%, var(--event-magenta) 50%, var(--event-gold) 100%);
-}
+    .objectives-gradient {
+      background: linear-gradient(135deg, var(--event-dark) 0%, var(--event-green-light) 45%, var(--event-orange) 100%);
+    }
 
     .objective-ring {
       position: absolute;
@@ -2382,65 +2344,6 @@ import Speakers from "../components/Speakers.svelte";
       }
 
     }
-
-    .objectives-strip {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-}
-
-.objective-block {
-  position: relative;
-  padding: 2.4rem 1.6rem 2rem;
-  min-height: 230px;
-  display: flex;
-  flex-direction: column;
-}
-
-.objective-block h3 {
-  margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -.02em;
-  color: var(--event-text);
-  text-transform: uppercase;
-}
-
-.objective-block p {
-  margin-top: .8rem;
-  font-size: .82rem;
-  line-height: 1.55;
-  color: rgba(20,33,15,.7);
-}
-
-.objective-arrow {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--event-text);
-}
-
-.objective-block-1 { background: #f9d9d6; }
-.objective-block-2 { background: #f9e29a; }
-.objective-block-3 { background: #d9d3f7; }
-.objective-block-4 { background: #cfe3fb; }
-.objective-block-5 { background: #cdeee0; }
-.objective-block-6 { background: #ffd9c2; }
-
-@media (max-width: 1024px) {
-  .objectives-strip {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .objectives-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-    
 
   </style>
 
