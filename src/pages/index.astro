@@ -3,49 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import Agenda from "../components/Agenda.svelte";
 import Countdown from "../components/Countdown.svelte";
 import Speakers from "../components/Speakers.svelte";
+import Navbar from "../components/Navbar.svelte";
+
+
+
 ---
 
 <Layout title="Social Entrepreneurship Conclave 2026 | Kerala Startup Mission">
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[#f6efe1] text-[var(--event-text)] backdrop-blur-xl">
-  <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 md:px-8 lg:px-10">
-    <a href="#top" class="shrink-0">
-      <img src="/img/logo.svg" alt="Kerala Startup Mission" class="w-24 md:w-28" />
-    </a>
-
-    <nav class="hidden items-center gap-7 text-[12px] font-semibold lg:flex">
-      <a href="#about" class="event-nav">About</a>
-      <a href="#initiatives" class="event-nav">Initiatives</a>
-      <a href="#objectives" class="event-nav">Objectives</a>
-      <a href="#highlights" class="event-nav">Highlights</a>
-      <a href="#speakers" class="event-nav">Speakers</a>
-      <a href="#agenda" class="event-nav">Agenda</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeva_29NgrAR1EK8uhSLtEo1jbNzhO45JS-qDl_MH8xTXg_FA/viewform" target="_blank" class="event-primary-btn hidden !min-h-0 !py-3 !text-xs sm:!inline-flex">
-        Register Now <span class="ml-2">↗</span>
-      </a>
-
-      <button id="mobile-menu-btn" type="button" class="flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border border-black/15 lg:hidden" aria-label="Open menu">
-        <span class="h-px w-4 bg-[var(--event-text)]"></span>
-        <span class="h-px w-4 bg-[var(--event-text)]"></span>
-      </button>
-    </div>
-  </div>
-
-  <div id="mobile-menu" class="hidden border-t border-black/10 bg-[#f6efe1] px-5 pb-6 pt-4 lg:hidden">
-    <nav class="flex flex-col">
-      <a href="#about" class="mobile-nav-link">About</a>
-      <a href="#initiatives" class="mobile-nav-link">Initiatives</a>
-      <a href="#objectives" class="mobile-nav-link">Objectives</a>
-      <a href="#highlights" class="mobile-nav-link">Highlights</a>
-      <a href="#speakers" class="mobile-nav-link">Speakers</a>
-      <a href="#agenda" class="mobile-nav-link">Agenda</a>
-    </nav>
-  </div>
-</header>
-
+<Navbar client:load></Navbar>
 <!-- <section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden bg-[var(--event-cream)] pt-[76px] text-[var(--event-text)]">
   <div class="hero-grid"></div>
   <div class="hero-blob hero-blob-blue"></div>
@@ -211,7 +177,7 @@ import Speakers from "../components/Speakers.svelte";
 
 <section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden pt-[76px] text-[var(--event-text)]">
   <div class="hero-bg">
-    <img src="/img/2026/bg.png" alt="Kerala changemakers and entrepreneurs" class="hero-bg-img" />
+    <img src="/img/2026/bg2.png" alt="Kerala changemakers and entrepreneurs" class="hero-bg-img" />
     <div class="hero-bg-overlay"></div>
   </div>
 
