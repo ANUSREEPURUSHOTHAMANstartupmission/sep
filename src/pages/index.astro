@@ -46,7 +46,7 @@ import Speakers from "../components/Speakers.svelte";
   </div>
 </header>
 
-<section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden bg-[var(--event-cream)] pt-[76px] text-[var(--event-text)]">
+<!-- <section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden bg-[var(--event-cream)] pt-[76px] text-[var(--event-text)]">
   <div class="hero-grid"></div>
   <div class="hero-blob hero-blob-blue"></div>
   <div class="hero-blob hero-blob-purple"></div>
@@ -98,6 +98,168 @@ import Speakers from "../components/Speakers.svelte";
       </div>
 
       
+    </div>
+  </div>
+
+  <div class="marquee-strip absolute inset-x-0 bottom-0 overflow-hidden border-t border-black/10 py-4">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
+      </div>
+
+      <div class="marquee-content" aria-hidden="true">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<!-- <section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden bg-[var(--event-cream)] pt-[76px] text-[var(--event-text)]">
+  <div class="hero-grid"></div>
+  <div class="hero-blob hero-blob-blue"></div>
+  <div class="hero-blob hero-blob-purple"></div>
+  <div class="hero-blob hero-blob-orange"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl px-5 pb-28 pt-16 md:px-8 lg:px-10 lg:pb-32">
+    <div class="grid items-center gap-16 lg:grid-cols-[1.08fr_.92fr]">
+
+      <div class="reveal">
+
+        <p class="mb-4 text-[11px] font-bold uppercase tracking-[.28em] text-[var(--event-orange)] hidden">
+          September 30 · Thiruvananthapuram
+        </p>
+
+        <h1 class="event-hero-title">
+          Social<br />
+          Entrepreneurship
+          <span>Conclave 2026</span>
+        </h1>
+
+        <p class="mt-7 max-w-xl text-base leading-8 text-[var(--event-text)]/65 md:text-lg">
+          Bringing together entrepreneurs, investors, government, academia,
+          NGOs and communities to build enterprises that create meaningful
+          social impact.
+        </p>
+
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeva_29NgrAR1EK8uhSLtEo1jbNzhO45JS-qDl_MH8xTXg_FA/viewform" target="_blank" class="event-primary-btn">
+            Register Now <span>→</span>
+          </a>
+
+          <a href="#agenda" class="event-secondary-btn">View Programme</a>
+        </div>
+
+        <div class="pt-5">
+          <Countdown date="2026-09-30T09:00" client:load />
+        </div>
+
+        <div class="mt-12 grid max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/5 sm:grid-cols-2">
+          <div class="event-meta-card event-meta-card-blue">
+            <span class="event-meta-label">Date</span>
+            <strong class="event-meta-value">30 September 2026</strong>
+          </div>
+
+          <div class="event-meta-card event-meta-card-magenta">
+            <span class="event-meta-label">Venue</span>
+            <strong class="event-meta-value">Hyatt Regency<br />Thiruvananthapuram</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative reveal hero-photo-col" style="animation-delay:.08s">
+        <span class="hero-note hero-note-a">People · Ideas ·<br />Enterprise · Impact</span>
+        <span class="hero-note hero-note-b">A more inclusive<br />tomorrow ↗</span>
+
+        <div class="hero-photo-frame">
+          <div class="hero-photo-sun"></div>
+          <img src="/img/2026/bg.png" alt="Kerala changemakers and entrepreneurs" class="hero-photo-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee-strip absolute inset-x-0 bottom-0 overflow-hidden border-t border-black/10 py-4">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
+      </div>
+
+      <div class="marquee-content" aria-hidden="true">
+        <span>Collaboration</span><i></i>
+        <span>Knowledge Exchange</span><i></i>
+        <span>Mentorship</span><i></i>
+        <span>Market Access</span><i></i>
+        <span>Partnerships</span><i></i>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden pt-[76px] text-[var(--event-text)]">
+  <div class="hero-bg">
+    <img src="/img/2026/bg.png" alt="Kerala changemakers and entrepreneurs" class="hero-bg-img" />
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <div class="hero-grid"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl px-5 pb-28 pt-16 md:px-8 lg:px-10 lg:pb-32">
+    <div class="max-w-2xl reveal">
+      <!-- <span class="hero-note hero-note-a">People · Ideas ·<br />Enterprise · Impact</span> -->
+
+      <p class="mb-4 text-[11px] font-bold uppercase tracking-[.28em] text-[var(--event-orange)] hidden">
+        September 30 · Thiruvananthapuram
+      </p>
+
+      <h1 class="event-hero-title">
+        Social<br />
+        Entrepreneurship
+        <span>Conclave 2026</span>
+      </h1>
+
+      <p class="mt-7 max-w-xl text-base leading-8 text-[var(--event-text)]/70 md:text-lg">
+        Bringing together entrepreneurs, investors, government, academia,
+        NGOs and communities to build enterprises that create meaningful
+        social impact.
+      </p>
+
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeva_29NgrAR1EK8uhSLtEo1jbNzhO45JS-qDl_MH8xTXg_FA/viewform" target="_blank" class="event-primary-btn">
+          Register Now <span>→</span>
+        </a>
+
+        <a href="#agenda" class="event-secondary-btn">View Programme</a>
+      </div>
+
+      <div class="pt-5">
+        <Countdown date="2026-09-30T09:00" client:load />
+      </div>
+
+      <div class="mt-12 grid max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/10 bg-white/70 backdrop-blur-sm sm:grid-cols-2">
+        <div class="event-meta-card event-meta-card-blue">
+          <span class="event-meta-label">Date</span>
+          <strong class="event-meta-value">30 September 2026</strong>
+        </div>
+
+        <div class="event-meta-card event-meta-card-magenta">
+          <span class="event-meta-label">Venue</span>
+          <strong class="event-meta-value">Hyatt Regency<br />Thiruvananthapuram</strong>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -955,7 +1117,7 @@ import Speakers from "../components/Speakers.svelte";
       font-family: "Space Grotesk", sans-serif;
 
       font-size:
-        clamp(3.5rem, 7.3vw, 7rem);
+        clamp(3rem, 7vw, 6rem);
 
       line-height: .88;
 
@@ -1058,7 +1220,43 @@ import Speakers from "../components/Speakers.svelte";
 
       transition: background .2s ease, border-color .2s ease;
     }
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--event-cream) 0%, rgba(246,239,225,.88) 32%, rgba(246,239,225,.35) 60%, rgba(246,239,225,.1) 100%),
+    linear-gradient(to top, var(--event-cream) 0%, rgba(246,239,225,0) 22%);
+}
+
+.hero-note {
+  display: block;
+  margin-bottom: 1.2rem;
+  font-family: "Caveat", cursive;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  color: var(--event-green);
+}
+
+@media (max-width: 767px) {
+  .hero-bg-overlay {
+    background:
+      linear-gradient(180deg, rgba(246,239,225,.55) 0%, var(--event-cream) 62%),
+      linear-gradient(90deg, rgba(246,239,225,.75) 0%, rgba(246,239,225,.4) 100%);
+  }
+}
     .event-secondary-btn:hover {
       background: rgba(20,33,15,.06);
       border-color: rgba(20,33,15,.35);
@@ -2440,7 +2638,52 @@ import Speakers from "../components/Speakers.svelte";
   }
 }
 
-    
+    .hero-photo-col {
+  min-height: 420px;
+}
+
+.hero-photo-frame {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.hero-photo-sun {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: var(--event-gold);
+  opacity: .55;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+.hero-photo-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+
+  -webkit-mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+}
+
+@media (max-width: 1024px) {
+  .hero-photo-col {
+    min-height: 320px;
+  }
+
+  .hero-photo-frame {
+    min-height: 320px;
+  }
+}
 
   </style>
 
