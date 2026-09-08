@@ -7,10 +7,10 @@ import Speakers from "../components/Speakers.svelte";
 
 <Layout title="Social Entrepreneurship Conclave 2026 | Kerala Startup Mission">
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0b0f2a]/85 text-white backdrop-blur-xl">
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[var(--event-cream)]/90 text-[var(--event-text)] backdrop-blur-xl">
   <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 md:px-8 lg:px-10">
     <a href="#top" class="shrink-0">
-      <img src="/img/logo.svg" alt="Kerala Startup Mission" class="w-24 brightness-0 invert md:w-28" />
+      <img src="/img/logo.svg" alt="Kerala Startup Mission" class="w-24 md:w-28" />
     </a>
 
     <nav class="hidden items-center gap-7 text-[12px] font-semibold lg:flex">
@@ -27,14 +27,14 @@ import Speakers from "../components/Speakers.svelte";
         Register Now <span class="ml-2">↗</span>
       </a>
 
-      <button id="mobile-menu-btn" type="button" class="flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border border-white/20 lg:hidden" aria-label="Open menu">
-        <span class="h-px w-4 bg-white"></span>
-        <span class="h-px w-4 bg-white"></span>
+      <button id="mobile-menu-btn" type="button" class="flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border border-black/15 lg:hidden" aria-label="Open menu">
+        <span class="h-px w-4 bg-[var(--event-text)]"></span>
+        <span class="h-px w-4 bg-[var(--event-text)]"></span>
       </button>
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-white/10 bg-[#0b0f2a] px-5 pb-6 pt-4 lg:hidden">
+  <div id="mobile-menu" class="hidden border-t border-black/10 bg-[var(--event-cream)] px-5 pb-6 pt-4 lg:hidden">
     <nav class="flex flex-col">
       <a href="#about" class="mobile-nav-link">About</a>
       <a href="#initiatives" class="mobile-nav-link">Initiatives</a>
@@ -46,7 +46,7 @@ import Speakers from "../components/Speakers.svelte";
   </div>
 </header>
 
-<section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden bg-[#0b0f2a] pt-[76px] text-white">
+<section id="top" class="event-hero relative flex min-h-[100svh] items-center overflow-hidden bg-[var(--event-cream)] pt-[76px] text-[var(--event-text)]">
   <div class="hero-grid"></div>
   <div class="hero-blob hero-blob-blue"></div>
   <div class="hero-blob hero-blob-purple"></div>
@@ -67,7 +67,7 @@ import Speakers from "../components/Speakers.svelte";
           </span>
         </div>
 
-        <p class="mb-4 text-[11px] font-bold uppercase tracking-[.28em] text-[#a68bff]">
+        <p class="mb-4 text-[11px] font-bold uppercase tracking-[.28em] text-[var(--event-orange)]">
           September 30 · Thiruvananthapuram
         </p>
 
@@ -77,7 +77,7 @@ import Speakers from "../components/Speakers.svelte";
           <span>Conclave 2026</span>
         </h1>
 
-        <p class="mt-7 max-w-xl text-base leading-8 text-white/60 md:text-lg">
+        <p class="mt-7 max-w-xl text-base leading-8 text-[var(--event-text)]/65 md:text-lg">
           Bringing together entrepreneurs, investors, government, academia,
           NGOs and communities to build enterprises that create meaningful
           social impact.
@@ -91,7 +91,7 @@ import Speakers from "../components/Speakers.svelte";
           <a href="#agenda" class="event-secondary-btn">View Programme</a>
         </div>
 
-        <div class="mt-12 grid max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
+        <div class="mt-12 grid max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/5 sm:grid-cols-2">
           <div class="event-meta-card event-meta-card-blue">
             <span class="event-meta-label">Date</span>
             <strong class="event-meta-value">30 September 2026</strong>
@@ -105,27 +105,30 @@ import Speakers from "../components/Speakers.svelte";
       </div>
 
       <div class="relative reveal" style="animation-delay:.08s">
+        <span class="hero-note hero-note-a">People · Ideas ·<br />Enterprise · Impact</span>
+        <span class="hero-note hero-note-b">A more inclusive<br />tomorrow ↗</span>
+
         <div class="event-visual-card">
           <div class="mb-6 flex items-center justify-between">
             <div>
-              <span class="text-[10px] font-bold uppercase tracking-[.18em] text-[#a68bff]">One ecosystem</span>
+              <span class="text-[10px] font-bold uppercase tracking-[.18em] text-[var(--event-purple)]">One ecosystem</span>
               <h2 class="mt-2 text-xl font-bold">Connected by impact.</h2>
             </div>
 
-            <div class="h-2.5 w-2.5 rounded-full bg-[#ff6633] shadow-[0_0_0_7px_rgba(255,102,51,.12)]"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-[var(--event-orange)] shadow-[0_0_0_7px_rgba(255,107,71,.15)]"></div>
           </div>
 
           <svg viewBox="0 0 320 300" class="w-full">
             <defs>
               <linearGradient id="ecoLinkGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#5c8cff" />
-                <stop offset="100%" stop-color="#ff2e93" />
+                <stop offset="0%" stop-color="#2f6b52" />
+                <stop offset="100%" stop-color="#ff6b47" />
               </linearGradient>
 
               <linearGradient id="ecoCoreGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#155dfc" />
-                <stop offset="55%" stop-color="#7c3aed" />
-                <stop offset="100%" stop-color="#ff2e93" />
+                <stop offset="0%" stop-color="#1a4a3a" />
+                <stop offset="55%" stop-color="#8f7fe0" />
+                <stop offset="100%" stop-color="#ff6b47" />
               </linearGradient>
             </defs>
 
@@ -170,20 +173,15 @@ import Speakers from "../components/Speakers.svelte";
             </g>
           </svg>
 
-          <div class="mt-5 border-t border-white/10 pt-5">
+          <div class="mt-5 border-t border-black/10 pt-5">
             <Countdown date="2026-09-30T09:00" client:load />
           </div>
         </div>
-
-        <!-- <div class="absolute -bottom-6 -left-5 hidden rounded-2xl border border-white/10 bg-[#120a30]/90 p-4 shadow-2xl backdrop-blur-xl md:block">
-          <span class="block text-[10px] uppercase tracking-[.15em] text-white/40">Hosted by</span>
-          <strong class="mt-1 block text-sm">Kerala Startup Mission</strong>
-        </div> -->
       </div>
     </div>
   </div>
 
-  <div class="marquee-strip absolute inset-x-0 bottom-0 overflow-hidden border-t border-white/10 py-4">
+  <div class="marquee-strip absolute inset-x-0 bottom-0 overflow-hidden border-t border-black/10 py-4">
     <div class="marquee-track">
       <div class="marquee-content">
         <span>Collaboration</span><i></i>
@@ -220,23 +218,30 @@ import Speakers from "../components/Speakers.svelte";
 
       <div class="reveal">
         <p class="text-xl font-medium leading-[1.65] text-[#0a1020] md:text-2xl">
-          The Social Entrepreneurship Conclave 2026 brings together social
-          entrepreneurs, startups, investors, NGOs, government, academia,
-          communities and ecosystem partners to foster collaboration,
-          knowledge exchange, mentorship, market access and partnerships.
+          The Social Entrepreneurship Conclave 2026 is a platform designed to
+          bring together social entrepreneurs, startups, investors, NGOs,
+          government, academia, communities, and ecosystem partners to
+          foster collaboration, knowledge exchange, mentorship, market
+          access and partnerships. The conclave aims to strengthen the
+          social entrepreneurship ecosystem in Kerala and to create social
+          startups based on technology or product innovation. The conclave
+          also envisions empowering social and women enterprises to scale
+          their impact and build home-grown global brands from Kerala.
         </p>
 
         <div class="mt-12 grid gap-8 md:grid-cols-2">
           <p class="text-sm leading-7 text-[#667085]">
-            The conclave will facilitate product showcases, mentor connects,
-            partnerships and market linkages that help social enterprises
-            scale their impact and build home-grown global brands.
+            The conclave will facilitate knowledge exchange, partnerships,
+            mentor connect, product showcase and market linkages, enabling
+            social enterprises to scale their impact and build home-grown
+            global brands from Kerala.
           </p>
 
           <p class="text-sm leading-7 text-[#667085]">
-            The event will also launch major new initiatives including the
-            Social Entrepreneurship Programme, Women Startup Cell and Startup
-            Literacy Campaign.
+            The event will also witness the launch of the first women
+            startup cell in Kerala and the release of the Women Startup
+            Handbook, alongside the Social Entrepreneurship Programme and
+            the Startup Literacy Campaign.
           </p>
         </div>
       </div>
@@ -254,7 +259,7 @@ import Speakers from "../components/Speakers.svelte";
   </div>
 </section>
 
-<section id="initiatives" class="relative overflow-hidden bg-[#f3f6fc] py-24 lg:py-32">
+<section id="initiatives" class="relative overflow-hidden bg-[var(--event-cream)] py-24 lg:py-32">
   <div class="mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
     <div class="max-w-3xl reveal">
       <span class="section-kicker">Launching at the conclave</span>
@@ -278,8 +283,9 @@ import Speakers from "../components/Speakers.svelte";
         <h3>Social Entrepreneurship Programme</h3>
 
         <p>
-          An incubation programme curated for social entrepreneurs by KSUM,
-          providing mentoring, EDPs, market access and funding opportunities.
+          A 12-week incubation programme curated for social entrepreneurs
+          by KSUM, providing EDPs, mentoring, knowledgeable sessions,
+          market access and funding opportunities for social startups.
         </p>
 
         <button class="initiative-link" data-initiative-modal="sep">
@@ -299,8 +305,9 @@ import Speakers from "../components/Speakers.svelte";
         <h3>Women Startup Cell</h3>
 
         <p>
-          A dedicated single point of access connecting women entrepreneurs
-          with KSUM schemes, mentorship and ecosystem support.
+          Kerala's first Women Startup Cell — a single point of access
+          connecting women entrepreneurs with KSUM schemes, mentorship,
+          incubation, co-working spaces, labs and ecosystem support.
         </p>
 
         <button class="initiative-link" data-initiative-modal="women">
@@ -320,8 +327,9 @@ import Speakers from "../components/Speakers.svelte";
         <h3>Startup Literacy Campaign</h3>
 
         <p>
-          Taking startup awareness, knowledge and entrepreneurial
-          opportunities deeper into Tier 2 and Tier 3 regions of Kerala.
+          Taking startup awareness, knowledge and opportunities into Tier
+          2 and Tier 3 regions of Kerala through Startup Literacy
+          Campaigns delivered in Malayalam.
         </p>
 
         <button class="initiative-link" data-initiative-modal="literacy">
@@ -347,32 +355,32 @@ import Speakers from "../components/Speakers.svelte";
       <div class="participant-list reveal">
         <div>
           <span>01</span>
-          <h3>Social Entrepreneurs & Impact Startups</h3>
+          <h3><i class="participant-tag participant-tag-1"></i>Social Entrepreneurs & Impact Startups</h3>
         </div>
 
         <div>
           <span>02</span>
-          <h3>Women Entrepreneurs & Startups</h3>
+          <h3><i class="participant-tag participant-tag-2"></i>Women Entrepreneurs & Startups</h3>
         </div>
 
         <div>
           <span>03</span>
-          <h3>Impact Investors & Mentors</h3>
+          <h3><i class="participant-tag participant-tag-3"></i>Impact Investors & Mentors</h3>
         </div>
 
         <div>
           <span>04</span>
-          <h3>NGOs & Communities</h3>
+          <h3><i class="participant-tag participant-tag-4"></i>NGOs & Communities</h3>
         </div>
 
         <div>
           <span>05</span>
-          <h3>Government & Policy Makers</h3>
+          <h3><i class="participant-tag participant-tag-5"></i>Government & Policy Makers</h3>
         </div>
 
         <div>
           <span>06</span>
-          <h3>Ecosystem Partners</h3>
+          <h3><i class="participant-tag participant-tag-6"></i>Ecosystem Partners</h3>
         </div>
       </div>
     </div>
@@ -390,7 +398,7 @@ import Speakers from "../components/Speakers.svelte";
 
         <h2 class="mt-5 max-w-lg font-['Space_Grotesk'] text-[clamp(2.8rem,5vw,5rem)] font-bold leading-[.98] tracking-[-.055em]">
           Connections that become
-          <span class="text-[#ffd84a]">impact.</span>
+          <span class="text-[var(--event-gold)]">impact.</span>
         </h2>
 
         <div class="objective-event-list mt-14">
@@ -461,48 +469,48 @@ import Speakers from "../components/Speakers.svelte";
     <div class="event-highlights mt-16">
       <div>
         <span>01</span>
-        <h3>Social Entrepreneurship Conclave Launch</h3>
+        <h3>Launch of the Social Entrepreneurship Conclave 2026</h3>
       </div>
 
       <div>
         <span>02</span>
-        <h3>Social Entrepreneurship Programme Launch</h3>
+        <h3>Launch of Social Entrepreneurship Programme</h3>
       </div>
 
       <div>
         <span>03</span>
-        <h3>Startup Literacy Campaign Launch</h3>
+        <h3>Launch of First Edition of Startup Literacy Campaign</h3>
       </div>
 
       <div>
         <span>04</span>
-        <h3>Women Startup Cell Launch</h3>
+        <h3>Launch of Women Startup Cell</h3>
       </div>
 
       <div>
         <span>05</span>
-        <h3>Women Startup Handbook Release</h3>
+        <h3>Launch of Revised Women Startup Handbook</h3>
       </div>
 
       <div>
         <span>06</span>
-        <h3>Masterclasses & Panel Discussions</h3>
+        <h3>Interactive Sessions, Master Class and Panel Discussions</h3>
       </div>
 
       <div>
         <span>07</span>
-        <h3>Social Impact Product Expo</h3>
+        <h3>Product Expos</h3>
       </div>
 
       <div>
         <span>08</span>
-        <h3>Product Launches</h3>
+        <h3>Product Launch</h3>
       </div>
     </div>
   </div>
 </section>
 
-<section id="speakers" class="border-y border-[#e8ecf4] bg-gradient-to-b from-[#f6f8fc] to-[#eef1fa] py-24 lg:py-32">
+<section id="speakers" class="border-y border-[#e8ecf4] bg-gradient-to-b from-[#f8f4ea] to-[#f2ecdd] py-24 lg:py-32">
   <div class="mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
     <div class="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
       <div class="reveal">
@@ -561,7 +569,7 @@ import Speakers from "../components/Speakers.svelte";
         <p class="mt-2 font-bold">Sachin P V</p>
         <p class="text-xs text-[#667085]">Project Coordinator</p>
 
-        <div class="mt-2 flex flex-col text-xs text-[#155dfc] md:items-end">
+        <div class="mt-2 flex flex-col text-xs text-[var(--event-orange)] md:items-end">
           <a href="mailto:sachin@startupmission.in">sachin@startupmission.in</a>
           <a href="tel:8943087358">8943087358</a>
         </div>
@@ -655,9 +663,8 @@ import Speakers from "../components/Speakers.svelte";
       badge: "12-week incubation programme",
       title: "Social Entrepreneurship Programme",
       body: `
-        <p>The Social Entrepreneurship Programme is designed to build a strong and enabling ecosystem for social enterprises in Kerala.</p>
-        <p>The programme provides entrepreneurship development programmes, mentorship, expert sessions, market access and opportunities for funding and partnerships.</p>
-        <p>The objective is to enable purpose-driven entrepreneurs to build sustainable and scalable solutions while positioning Kerala as a destination for high-impact social enterprises.</p>
+        <p>Social Entrepreneurship Programme (SEP) is an initiative designed to build a strong and enabling ecosystem for social enterprises in Kerala. It supports purpose-driven entrepreneurs in transforming social and environmental challenges into innovative, sustainable and scalable solutions.</p>
+        <p>SEP aims to position Kerala as a leading destination for social enterprises by enabling access to infrastructure, government support, funding, market opportunities, industry–academia linkages and other ecosystem resources. By connecting ideas with opportunities and purpose with scale, SEP will empower social enterprises to create lasting impact, strengthen communities and build home-grown global brands from Kerala.</p>
       `
     },
 
@@ -665,8 +672,8 @@ import Speakers from "../components/Speakers.svelte";
       badge: "First in Kerala",
       title: "Women Startup Cell",
       body: `
-        <p>Kerala's first Women Startup Cell will provide a single access point for women entrepreneurs seeking startup support and information.</p>
-        <p>The cell will connect women entrepreneurs with KSUM schemes, mentorship, incubation, co-working infrastructure, laboratories and other ecosystem opportunities.</p>
+        <p>A key highlight of the conclave will be the launch of Kerala's first Women Startup Cell and the Women Startup Handbook.</p>
+        <p>The Women Startup Cell will serve as a single point of access for women entrepreneurs seeking information on startup support, KSUM schemes, mentorship, incubation and co-working spaces, labs, and other ecosystem resources.</p>
       `
     },
 
@@ -674,8 +681,8 @@ import Speakers from "../components/Speakers.svelte";
       badge: "Grassroots outreach",
       title: "Startup Literacy Campaign",
       body: `
-        <p>The Startup Literacy Campaign will take startup awareness and entrepreneurial knowledge into Tier 2 and Tier 3 regions across Kerala.</p>
-        <p>Delivered with a strong Malayalam outreach component, the initiative will help aspiring entrepreneurs understand startup opportunities, support systems and pathways available to them.</p>
+        <p>KSUM is expanding women-focused startup initiatives across Tier 2 and Tier 3 regions through Startup Literacy Campaigns in Malayalam.</p>
+        <p>The conclave will mark the launch of the first edition of the Startup Literacy Campaign, bringing startup awareness, knowledge, and opportunities closer to aspiring entrepreneurs across Kerala.</p>
       `
     }
   };
@@ -728,16 +735,23 @@ import Speakers from "../components/Speakers.svelte";
 </script>
   <style is:global>
 
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap');
+
     :root {
-      --event-blue: #155dfc;
-      --event-blue-light: #5c8cff;
-      --event-purple: #7c3aed;
-      --event-magenta: #ff2e93;
-      --event-orange: #ff6633;
-      --event-gold: #ffd84a;
-      --event-green: #16c784;
-      --event-dark: #0b0f2a;
-      --event-text: #0a1020;
+      /* ===== New palette — cream / forest green / orange / lavender / gold ===== */
+      --event-cream: #f6efe1;
+      --event-blue: #5b8dd6;        /* sky blue accent (Investors) */
+      --event-blue-light: #86b0e6;
+      --event-purple: #8f7fe0;      /* lavender accent (Policy Makers) */
+      --event-purple-deep: #6f5fd0;
+      --event-magenta: #f28fa0;     /* soft pink accent (Ecosystem Builders) */
+      --event-orange: #ff6b47;      /* primary warm accent */
+      --event-gold: #f2c744;        /* yellow accent (Women Entrepreneurs) */
+      --event-mint: #2ea88f;        /* mint/green accent (Communities) */
+      --event-green: #1a4a3a;       /* deep forest green — primary dark */
+      --event-green-light: #2f6b52;
+      --event-dark: #14210f;        /* near-black green for dark sections */
+      --event-text: #14210f;
     }
 
     html {
@@ -746,7 +760,7 @@ import Speakers from "../components/Speakers.svelte";
 
     body {
       margin: 0;
-      background: #fff;
+      background: var(--event-cream);
       color: var(--event-text);
       font-family: "Inter", sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -759,12 +773,12 @@ import Speakers from "../components/Speakers.svelte";
 
     .event-nav {
       position: relative;
-      color: rgba(255,255,255,.68);
+      color: rgba(20,33,15,.68);
       transition: color .2s ease;
     }
 
     .event-nav:hover {
-      color: #fff;
+      color: var(--event-text);
     }
 
     .event-nav::after {
@@ -774,7 +788,7 @@ import Speakers from "../components/Speakers.svelte";
       bottom: -10px;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--event-magenta), var(--event-gold));
+      background: linear-gradient(90deg, var(--event-orange), var(--event-gold));
       transition: width .25s ease;
     }
 
@@ -784,10 +798,10 @@ import Speakers from "../components/Speakers.svelte";
 
     .mobile-nav-link {
       padding: .85rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(20,33,15,.08);
       font-size: .9rem;
       font-weight: 600;
-      color: #fff;
+      color: var(--event-text);
     }
 
 
@@ -799,16 +813,16 @@ import Speakers from "../components/Speakers.svelte";
       position: absolute;
       inset: 0;
 
-      opacity: .35;
+      opacity: .5;
 
       background-image:
         linear-gradient(
-          rgba(255,255,255,.045) 1px,
+          rgba(20,33,15,.05) 1px,
           transparent 1px
         ),
         linear-gradient(
           90deg,
-          rgba(255,255,255,.045) 1px,
+          rgba(20,33,15,.05) 1px,
           transparent 1px
         );
 
@@ -834,7 +848,7 @@ import Speakers from "../components/Speakers.svelte";
       height: 620px;
       left: -330px;
       top: 60px;
-      background: rgba(21,93,252,.45);
+      background: rgba(26,74,58,.16);
     }
 
     .hero-blob-purple {
@@ -842,7 +856,7 @@ import Speakers from "../components/Speakers.svelte";
       height: 520px;
       right: -220px;
       bottom: -180px;
-      background: rgba(124,58,237,.4);
+      background: rgba(143,127,224,.3);
     }
 
     .hero-blob-orange {
@@ -850,7 +864,7 @@ import Speakers from "../components/Speakers.svelte";
       height: 430px;
       right: -180px;
       top: 240px;
-      background: rgba(255,102,51,.24);
+      background: rgba(255,107,71,.22);
     }
 
     .event-pill {
@@ -862,9 +876,9 @@ import Speakers from "../components/Speakers.svelte";
 
       border-radius: 999px;
 
-      border: 1px solid rgba(124,167,255,.3);
+      border: 1px solid rgba(26,74,58,.22);
 
-      background: rgba(21,93,252,.1);
+      background: rgba(26,74,58,.07);
 
       font-size: .62rem;
       font-weight: 700;
@@ -872,15 +886,15 @@ import Speakers from "../components/Speakers.svelte";
       letter-spacing: .1em;
       text-transform: uppercase;
 
-      color: #a8c5ff;
+      color: var(--event-green);
     }
 
     .event-pill-dot {
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: var(--event-gold);
-      box-shadow: 0 0 0 4px rgba(255,216,74,.18);
+      background: var(--event-orange);
+      box-shadow: 0 0 0 4px rgba(255,107,71,.18);
       animation: pillPulse 2.2s ease-in-out infinite;
     }
 
@@ -890,9 +904,9 @@ import Speakers from "../components/Speakers.svelte";
     }
 
     .event-pill-muted {
-      border-color: rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(255,255,255,.5);
+      border-color: rgba(20,33,15,.14);
+      background: rgba(20,33,15,.03);
+      color: rgba(20,33,15,.55);
     }
 
     .event-hero-title {
@@ -910,12 +924,14 @@ import Speakers from "../components/Speakers.svelte";
       letter-spacing: -.065em;
 
       font-weight: 750;
+
+      color: var(--event-text);
     }
 
     .event-hero-title span {
       display: block;
 
-      background-image: linear-gradient(100deg, #5c8cff 0%, #a68bff 30%, #ff2e93 62%, #ffd84a 100%);
+      background-image: linear-gradient(100deg, #1a4a3a 0%, #2f6b52 28%, #ff6b47 65%, #f2c744 100%);
       background-size: 220% 100%;
 
       -webkit-background-clip: text;
@@ -931,6 +947,29 @@ import Speakers from "../components/Speakers.svelte";
       100% { background-position: 220% 50%; }
     }
 
+    /* handwritten-style sticky annotations */
+    .hero-note {
+      position: absolute;
+      z-index: 5;
+      font-family: "Caveat", cursive;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      color: var(--event-green);
+      pointer-events: none;
+    }
+
+    .hero-note-a {
+      top: -2.4rem;
+      left: .5rem;
+    }
+
+    .hero-note-b {
+      bottom: -2.6rem;
+      right: 1rem;
+      text-align: right;
+      color: var(--event-orange);
+    }
+
     .event-primary-btn {
       min-height: 52px;
 
@@ -944,14 +983,14 @@ import Speakers from "../components/Speakers.svelte";
 
       border-radius: 999px;
 
-      background: linear-gradient(120deg, var(--event-orange), var(--event-magenta));
+      background: linear-gradient(120deg, var(--event-orange), var(--event-gold));
 
       color: #fff;
 
       font-size: .84rem;
       font-weight: 750;
 
-      box-shadow: 0 14px 34px -10px rgba(255,46,147,.5);
+      box-shadow: 0 14px 34px -10px rgba(255,107,71,.5);
 
       transition:
         transform .2s ease,
@@ -960,7 +999,7 @@ import Speakers from "../components/Speakers.svelte";
 
     .event-primary-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 20px 44px -10px rgba(255,46,147,.6);
+      box-shadow: 0 20px 44px -10px rgba(255,107,71,.6);
     }
 
     .event-secondary-btn {
@@ -971,10 +1010,10 @@ import Speakers from "../components/Speakers.svelte";
 
       padding: .9rem 1.4rem;
 
-      border: 1px solid rgba(255,255,255,.2);
+      border: 1px solid rgba(20,33,15,.2);
       border-radius: 999px;
 
-      color: #fff;
+      color: var(--event-text);
 
       font-size: .82rem;
       font-weight: 650;
@@ -983,23 +1022,23 @@ import Speakers from "../components/Speakers.svelte";
     }
 
     .event-secondary-btn:hover {
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.35);
+      background: rgba(20,33,15,.06);
+      border-color: rgba(20,33,15,.35);
     }
 
     .event-meta-card {
       position: relative;
       padding: 1.25rem;
-      background: rgba(10,16,32,.95);
+      background: rgba(255,255,255,.65);
       border-left: 3px solid transparent;
     }
 
     .event-meta-card-blue {
-      border-left-color: var(--event-blue-light);
+      border-left-color: var(--event-blue);
     }
 
     .event-meta-card-magenta {
-      border-left-color: var(--event-magenta);
+      border-left-color: var(--event-orange);
     }
 
     .event-meta-label {
@@ -1015,7 +1054,7 @@ import Speakers from "../components/Speakers.svelte";
 
       text-transform: uppercase;
 
-      color: rgba(255,255,255,.4);
+      color: rgba(20,33,15,.45);
     }
 
     .event-meta-value {
@@ -1027,7 +1066,7 @@ import Speakers from "../components/Speakers.svelte";
 
       font-weight: 650;
 
-      color: #fff;
+      color: var(--event-text);
     }
 
 
@@ -1040,20 +1079,20 @@ import Speakers from "../components/Speakers.svelte";
 
       border-radius: 30px;
 
-      border: 1px solid rgba(255,255,255,.12);
+      border: 1px solid rgba(20,33,15,.08);
 
       background:
         linear-gradient(
           150deg,
-          rgba(21,93,252,.2),
-          rgba(124,58,237,.12) 55%,
-          rgba(255,255,255,.035)
+          rgba(26,74,58,.08),
+          rgba(143,127,224,.08) 55%,
+          rgba(255,255,255,.9)
         );
 
       backdrop-filter: blur(14px);
 
       box-shadow:
-        0 35px 100px rgba(0,0,0,.35);
+        0 35px 90px rgba(20,33,15,.12);
     }
 
     .eco-link {
@@ -1070,28 +1109,28 @@ import Speakers from "../components/Speakers.svelte";
     }
 
     .eco-node-blue {
-      fill: #0d203e;
-      stroke: #5c8cff;
+      fill: #e7f0fb;
+      stroke: var(--event-blue);
     }
 
     .eco-node-purple {
-      fill: #1c1440;
-      stroke: #a68bff;
+      fill: #f1eefc;
+      stroke: var(--event-purple);
     }
 
     .eco-node-magenta {
-      fill: #2b0f2a;
-      stroke: #ff6fb8;
+      fill: #fdeef1;
+      stroke: var(--event-magenta);
     }
 
     .eco-node-gold {
-      fill: #2b230f;
-      stroke: #ffd84a;
+      fill: #fdf6e0;
+      stroke: var(--event-gold);
     }
 
     .eco-node-green {
-      fill: #0d2a20;
-      stroke: #47e0a4;
+      fill: #e8f7f0;
+      stroke: var(--event-mint);
     }
 
     .eco-core {
@@ -1105,7 +1144,7 @@ import Speakers from "../components/Speakers.svelte";
 
       font-weight: 650;
 
-      fill: rgba(255,255,255,.72);
+      fill: rgba(20,33,15,.78);
     }
 
     .eco-core-label {
@@ -1126,7 +1165,7 @@ import Speakers from "../components/Speakers.svelte";
     ===================================== */
 
     .marquee-strip {
-      background: linear-gradient(90deg, var(--event-blue) 0%, var(--event-purple) 50%, var(--event-magenta) 100%);
+      background: linear-gradient(90deg, var(--event-purple) 0%, var(--event-purple-deep) 100%);
     }
 
     .marquee-track {
@@ -1182,7 +1221,9 @@ import Speakers from "../components/Speakers.svelte";
     ===================================== */
 
     .section-kicker {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
 
       font-size: .66rem;
 
@@ -1192,7 +1233,16 @@ import Speakers from "../components/Speakers.svelte";
 
       text-transform: uppercase;
 
-      color: var(--event-blue);
+      color: var(--event-orange);
+    }
+
+    .section-kicker::after {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background: currentColor;
+      opacity: .6;
     }
 
     .event-section-title {
@@ -1215,7 +1265,7 @@ import Speakers from "../components/Speakers.svelte";
     }
 
     .text-grad-blue-purple {
-      background-image: linear-gradient(120deg, var(--event-blue), var(--event-purple));
+      background-image: linear-gradient(120deg, var(--event-green), var(--event-orange));
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1237,7 +1287,7 @@ import Speakers from "../components/Speakers.svelte";
       opacity: .12;
       filter: blur(60px);
       pointer-events: none;
-      background: conic-gradient(from 140deg, var(--event-blue), var(--event-purple), var(--event-magenta), var(--event-gold), var(--event-blue));
+      background: conic-gradient(from 140deg, var(--event-green), var(--event-purple), var(--event-orange), var(--event-gold), var(--event-green));
     }
 
     .event-quote {
@@ -1250,7 +1300,7 @@ import Speakers from "../components/Speakers.svelte";
 
       border-radius: 28px;
 
-      background: linear-gradient(135deg, #edf3ff, #f7ecff);
+      background: linear-gradient(135deg, #eef6f0, #fff3ec);
     }
 
     .event-quote > span {
@@ -1265,7 +1315,7 @@ import Speakers from "../components/Speakers.svelte";
 
       line-height: 1;
 
-      color: rgba(124,58,237,.12);
+      color: rgba(26,74,58,.12);
     }
 
     .event-quote p {
@@ -1296,9 +1346,9 @@ import Speakers from "../components/Speakers.svelte";
 
     .event-initiative {
       position: relative;
-      --accent: #155dfc;
-      --accent-2: #7c3aed;
-      --soft: #edf3ff;
+      --accent: #ff6b47;
+      --accent-2: #f2c744;
+      --soft: #fff1ea;
 
       display: flex;
       flex-direction: column;
@@ -1336,15 +1386,15 @@ import Speakers from "../components/Speakers.svelte";
     }
 
     .event-initiative-magenta {
-      --accent: #ff2e93;
-      --accent-2: #ff6633;
-      --soft: #ffeaf5;
+      --accent: #8f7fe0;
+      --accent-2: #6f5fd0;
+      --soft: #f1eefc;
     }
 
     .event-initiative-green {
-      --accent: #16c784;
-      --accent-2: #5c8cff;
-      --soft: #e9fbf3;
+      --accent: #f2c744;
+      --accent-2: #ff6b47;
+      --soft: #fdf6e0;
     }
 
     .initiative-index {
@@ -1499,6 +1549,10 @@ import Speakers from "../components/Speakers.svelte";
     .participant-list h3 {
       margin: 0;
 
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+
       font-family:
         "Space Grotesk",
         sans-serif;
@@ -1509,13 +1563,28 @@ import Speakers from "../components/Speakers.svelte";
       font-weight: 650;
     }
 
+    .participant-tag {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .participant-tag-1 { background: var(--event-orange); }
+    .participant-tag-2 { background: var(--event-gold); }
+    .participant-tag-3 { background: var(--event-blue); }
+    .participant-tag-4 { background: var(--event-mint); }
+    .participant-tag-5 { background: var(--event-purple); }
+    .participant-tag-6 { background: var(--event-magenta); }
+
 
     /* =====================================
        OBJECTIVES
     ===================================== */
 
     .objectives-gradient {
-      background: linear-gradient(135deg, var(--event-blue) 0%, var(--event-purple) 55%, var(--event-magenta) 100%);
+      background: linear-gradient(135deg, var(--event-green) 0%, var(--event-purple) 55%, var(--event-orange) 100%);
     }
 
     .objective-ring {
@@ -1644,7 +1713,7 @@ import Speakers from "../components/Speakers.svelte";
 
       font-family: "Space Grotesk", sans-serif;
 
-      background-image: linear-gradient(120deg, var(--event-blue), var(--event-magenta));
+      background-image: linear-gradient(120deg, var(--event-green), var(--event-orange));
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1672,7 +1741,7 @@ import Speakers from "../components/Speakers.svelte";
     ===================================== */
 
     .cta-gradient {
-      background: linear-gradient(135deg, var(--event-dark) 0%, var(--event-purple) 55%, var(--event-magenta) 100%);
+      background: linear-gradient(135deg, var(--event-dark) 0%, var(--event-green-light) 45%, var(--event-orange) 100%);
     }
 
     .cta-glow {
@@ -1691,7 +1760,7 @@ import Speakers from "../components/Speakers.svelte";
       top: -300px;
 
       background:
-        rgba(255,216,74,.35);
+        rgba(242,199,68,.35);
 
       filter: blur(120px);
     }
@@ -1704,7 +1773,7 @@ import Speakers from "../components/Speakers.svelte";
       bottom: -260px;
 
       background:
-        rgba(21,93,252,.35);
+        rgba(47,107,82,.4);
 
       filter: blur(120px);
     }
@@ -1715,8 +1784,8 @@ import Speakers from "../components/Speakers.svelte";
     ===================================== */
 
     .scroll-top-btn {
-      background: linear-gradient(135deg, var(--event-blue), var(--event-purple));
-      box-shadow: 0 12px 28px -8px rgba(124,58,237,.55);
+      background: linear-gradient(135deg, var(--event-orange), var(--event-purple));
+      box-shadow: 0 12px 28px -8px rgba(255,107,71,.45);
     }
 
 
@@ -1819,9 +1888,9 @@ import Speakers from "../components/Speakers.svelte";
 
       border-radius: 999px;
 
-      background: #edf3ff;
+      background: #fff1ea;
 
-      color: var(--event-blue);
+      color: var(--event-orange);
 
       font-size: .6rem;
 
@@ -1923,7 +1992,7 @@ import Speakers from "../components/Speakers.svelte";
 
       border-radius: 999px;
 
-      background: linear-gradient(135deg, #edf3ff, #f7ecff);
+      background: linear-gradient(135deg, #eef6f0, #fff3ec);
     }
 
     .speaker-photo img {
@@ -1989,7 +2058,7 @@ import Speakers from "../components/Speakers.svelte";
 
       text-transform: uppercase;
 
-      color: var(--event-blue);
+      color: var(--event-orange);
     }
 
     .agenda-date strong {
@@ -2002,6 +2071,8 @@ import Speakers from "../components/Speakers.svelte";
       font-size: 4rem;
 
       line-height: .9;
+
+      color: var(--event-green);
     }
 
     .agenda-date p {
@@ -2043,6 +2114,8 @@ import Speakers from "../components/Speakers.svelte";
       font-size: 1.4rem;
 
       font-weight: 700;
+
+      color: var(--event-green);
     }
 
     .agenda-period p {
@@ -2072,7 +2145,7 @@ import Speakers from "../components/Speakers.svelte";
     }
 
     .agenda-event time {
-      color: var(--event-blue);
+      color: var(--event-orange);
 
       font-family:
         "Space Grotesk",
@@ -2106,7 +2179,7 @@ import Speakers from "../components/Speakers.svelte";
 
       border-radius: 16px;
 
-      background: linear-gradient(135deg, #edf3ff, #f7ecff);
+      background: linear-gradient(135deg, #eef6f0, #fff3ec);
     }
 
 
@@ -2158,6 +2231,10 @@ import Speakers from "../components/Speakers.svelte";
             16vw,
             4.7rem
           );
+      }
+
+      .hero-note {
+        display: none;
       }
 
       .event-highlights {
