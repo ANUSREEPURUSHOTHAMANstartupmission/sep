@@ -1,14 +1,16 @@
 <script>
   import { onMount } from 'svelte';
-  let full_view = false;
 
   let speaker_list = [];
   let speakerColors = new Map();
 
   const colors = [
-    { border: '#155dfc', bg: '#ffffff' }, // Red
-    { border: '#155dfc', bg: '#ffffff' }, // Red
-
+    { border: '#ff6b47', bg: '#fff1ea', text: '#ff6b47' }, // orange
+    { border: '#f2c744', bg: '#fdf6e0', text: '#a3811f' }, // gold
+    { border: '#8f7fe0', bg: '#f1eefc', text: '#8f7fe0' }, // purple
+    { border: '#2ea88f', bg: '#e8f7f0', text: '#2ea88f' }, // mint
+    { border: '#5b8dd6', bg: '#e7f0fb', text: '#5b8dd6' }, // blue
+    { border: '#f28fa0', bg: '#fdeef1', text: '#f28fa0' }, // pink
   ];
 
   function shuffleColorsWithoutRepeat(prevColor) {
@@ -30,30 +32,17 @@
         queue = shuffleColorsWithoutRepeat(lastColor);
         i = 0;
       }
-      speakerColors.set(sp.photo, queue[i]); // assuming photo is unique, else use name
+      speakerColors.set(sp.photo, queue[i]);
       lastColor = queue[i];
       i++;
     }
   }
-
-  function findPos(obj) {
-    var curtop = 0;
-    if (obj.offsetParent) {
-        do {
-            curtop += obj.offsetTop;
-        } while (obj = obj.offsetParent);
-    return curtop;
-    }
-  }
-
 
   onMount(() => {
     fetch(`https://events.startupmission.in/api/event/sep/speakers?category=speakers`)
       .then(response => response.json())
       .then((json) => {
         speaker_list = json;
-
-        // Flatten all speakers for color assignment
         const all = Object.values(json).flat();
         assignColors(all);
       });
@@ -65,27 +54,30 @@
 </script>
 
 {#each Object.entries(speaker_list) as [category, speakers]}
-  <section class="overflow-hidden  openTrans relative">
+  <section class="overflow-hidden openTrans relative">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
       {#each speakers as { name, designation, organisation, photo, linkedin }}
-        <div class="relative group rounded-lg overflow-hidden flex flex-col border-2 h-full shadow-sm hover:shadow-lg transition-all duration-300"
-             style="border-color: {speakerColors.get(photo)?.border}">
-          <img src={getImage(photo)} alt={name} class="  w-full object-cover" loading="lazy" />
+        <div class="speaker-tile group relative flex h-full flex-col overflow-hidden rounded-[22px] bg-white transition-all duration-300"
+             style="border:1px solid {speakerColors.get(photo)?.border}33; box-shadow: 0 1px 0 {speakerColors.get(photo)?.border}22 inset;">
 
-          <div class="text-black text-center py-2 px-2 font-semibold h-full flex-1" style="background-color: {speakerColors.get(photo)?.bg}">
-            <h3 class="text-base">{name}</h3>
-            <p class="text-xs font-normal">{designation}<br />{organisation}</p>
+          <div class="speaker-tile-photo">
+            <img src={getImage(photo)} alt={name} class="h-full w-full object-cover" loading="lazy" />
+            <span class="speaker-tile-accent" style="background: {speakerColors.get(photo)?.border}"></span>
+          </div>
+
+          <div class="flex-1 px-4 py-4 text-center" style="background-color: {speakerColors.get(photo)?.bg}">
+            <h3 class="font-['Space_Grotesk'] text-[.95rem] font-bold leading-snug text-[var(--event-text)]">{name}</h3>
+            <p class="mt-1 text-[.72rem] leading-relaxed text-[#667085]">{designation}<br />{organisation}</p>
           </div>
 
           {#if linkedin}
             <a href={linkedin} target="_blank"
-               class="absolute bottom-0 left-8 transform -translate-x-1/2 translate-y-full 
-                      opacity-0 group-hover:-translate-y-20 group-hover:opacity-100 
-                      transition-all duration-300 ease-in-out bg-white shadow-md 
-                      rounded-full p-2 z-10"
-               style="border: 2px solid {speakerColors.get(photo)?.bg}; color: {speakerColors.get(photo)?.bg}">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+               class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center
+                      rounded-full bg-white opacity-0 shadow-md transition-all duration-300
+                      ease-in-out group-hover:opacity-100"
+               style="border: 1.5px solid {speakerColors.get(photo)?.border}; color: {speakerColors.get(photo)?.border}">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-4 w-4" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.238-5 5v14c0 
                   2.762 2.239 5 5 5h14c2.762 0 5-2.238 
                   5-5v-14c0-2.762-2.238-5-5-5zm-11 
@@ -102,14 +94,29 @@
           {/if}
         </div>
       {/each}
-
-
-     
-
     </div>
   </section>
-   
 {/each}
 
+<style>
+  .speaker-tile {
+    box-shadow: 0 1px 3px rgba(20, 33, 15, 0.06);
+  }
 
+  .speaker-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(20, 33, 15, 0.12);
+  }
 
+  .speaker-tile-photo {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .speaker-tile-accent {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 3px;
+  }
+</style>
