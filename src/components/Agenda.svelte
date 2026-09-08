@@ -9,15 +9,13 @@
   let venues = [];
 
   let active_tab = '';
-  let active_venue = '';
+  let active_venue = 'main stage';
 
   async function loadData() {
     loading = true;
 
     try {
-      const response = await fetch(
-        'https://events.startupmission.in/api/event/sep/agenda/venue'
-      );
+      const response = await fetch('https://events.startupmission.in/api/event/sep/agenda/venue');
 
       if (!response.ok) {
         throw new Error(`Agenda API returned ${response.status}`);
@@ -31,8 +29,7 @@
 
       const availableDates = dates();
 
-      const today = DateTime
-        .now()
+      const today = DateTime.now()
         .setZone('Asia/Kolkata')
         .toFormat('LLL dd, yyyy');
 
@@ -41,7 +38,6 @@
         : availableDates[0] ?? '';
 
       setDefaultVenue();
-
     } catch (error) {
       console.error('Failed to load agenda:', error);
     } finally {
@@ -50,11 +46,6 @@
   }
 
   onMount(loadData);
-
-
-  /* ----------------------------------------
-     DATE
-  ---------------------------------------- */
 
   function dates() {
     return Object.keys(agenda_list);
@@ -79,11 +70,6 @@
     setDefaultVenue();
   }
 
-
-  /* ----------------------------------------
-     VENUE
-  ---------------------------------------- */
-
   function getActiveDateVenues() {
     if (!active_tab || !agenda_list[active_tab]) {
       return [];
@@ -95,10 +81,7 @@
   function setDefaultVenue() {
     const availableVenues = getActiveDateVenues();
 
-    if (
-      active_venue &&
-      availableVenues.includes(active_venue)
-    ) {
+    if (active_venue && availableVenues.includes(active_venue)) {
       return;
     }
 
@@ -108,11 +91,6 @@
   function selectVenue(venue) {
     active_venue = venue;
   }
-
-
-  /* ----------------------------------------
-     TIME
-  ---------------------------------------- */
 
   function parseTime(date) {
     return DateTime.fromSQL(date, {
@@ -145,27 +123,13 @@
     return `${s.toFormat('h.mm a')} – ${e.toFormat('h.mm a')}`;
   }
 
-
-  /* ----------------------------------------
-     CURRENT AGENDA
-  ---------------------------------------- */
-
   function currentAgenda() {
-    if (
-      !active_tab ||
-      !active_venue ||
-      !agenda_list[active_tab]
-    ) {
+    if (!active_tab || !active_venue || !agenda_list[active_tab]) {
       return [];
     }
 
     return agenda_list[active_tab][active_venue] ?? [];
   }
-
-
-  /* ----------------------------------------
-     MORNING / AFTERNOON GROUPING
-  ---------------------------------------- */
 
   function getPeriod(startTime) {
     const d = parseTime(startTime);
@@ -181,20 +145,10 @@
     const agenda = currentAgenda();
 
     return {
-      Morning: agenda.filter(
-        (item) => getPeriod(item.start_time) === 'Morning'
-      ),
-
-      Afternoon: agenda.filter(
-        (item) => getPeriod(item.start_time) === 'Afternoon'
-      )
+      Morning: agenda.filter((item) => getPeriod(item.start_time) === 'Morning'),
+      Afternoon: agenda.filter((item) => getPeriod(item.start_time) === 'Afternoon')
     };
   }
-
-
-  /* ----------------------------------------
-     PERIOD DESCRIPTION
-  ---------------------------------------- */
 
   function periodDescription(period) {
     if (period === 'Morning') {
@@ -204,16 +158,8 @@
     return 'Conversations, networking & ecosystem support';
   }
 
-
-  /* ----------------------------------------
-     FEATURED SESSION
-  ---------------------------------------- */
-
   function isFeatured(item) {
-    const text = [
-      item.name,
-      item.category
-    ]
+    const text = [item.name, item.category]
       .filter(Boolean)
       .join(' ')
       .toLowerCase();
@@ -228,15 +174,8 @@
       'special address'
     ];
 
-    return featuredTerms.some(
-      (term) => text.includes(term)
-    );
+    return featuredTerms.some((term) => text.includes(term));
   }
-
-
-  /* ----------------------------------------
-     SESSION DETAILS
-  ---------------------------------------- */
 
   function hasSpeakers(speakers) {
     if (!speakers) {
@@ -255,407 +194,144 @@
     );
   }
 
-
-  /* ----------------------------------------
-     SPEAKER HELPERS
-  ---------------------------------------- */
-
   function speakerRole(speaker) {
-    return [
-      speaker.designation,
-      speaker.organisation
-    ]
+    return [speaker.designation, speaker.organisation]
       .filter(Boolean)
       .join(', ');
   }
 </script>
 
-
-<section
-  id="agenda"
-  class=" section-white agenda-section"
->
-
+<section id="agenda" class="section-white agenda-section text-black">
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
-
-
-    <!-- ======================================
-         HEADING
-    ======================================= -->
-
-    <div class="agenda-heading reveal">
-
+    <div class="agenda-heading">
       <div>
-
-        <span class="section-index">
-          07
-        </span>
-
-        <p class="section-eyebrow">
-          Programme
-        </p>
-
-        <h2 class="section-title">
-          Agenda
-        </h2>
-
+        <span class="section-index">07</span>
+        <p class="section-eyebrow">Programme</p>
+        <h2 class="section-title">Agenda</h2>
       </div>
-
 
       {#if active_tab}
-
         <div class="agenda-date">
-
-          <span>
-            {dateFormat(active_tab, 'cccc')}
-          </span>
-
-          <strong>
-            {dateFormat(active_tab, 'dd')}
-          </strong>
-
-          <p>
-            {dateFormat(active_tab, 'LLLL yyyy')}
-          </p>
-
+          <span>{dateFormat(active_tab, 'cccc')}</span>
+          <strong>{dateFormat(active_tab, 'dd')}</strong>
+          <p>{dateFormat(active_tab, 'LLLL yyyy')}</p>
         </div>
-
       {/if}
-
     </div>
 
-
-
-    <!-- ======================================
-         LOADING
-    ======================================= -->
-
     {#if loading}
-
       <div class="agenda-loading mt-16">
-
         <div class="agenda-loading-line"></div>
         <div class="agenda-loading-line"></div>
         <div class="agenda-loading-line"></div>
         <div class="agenda-loading-line"></div>
-
       </div>
-
 
     {:else if dates().length === 0}
-
-      <div class="agenda-empty mt-16">
-        Programme details will be announced soon.
-      </div>
-
+      <div class="agenda-empty mt-16">Programme details will be announced soon.</div>
 
     {:else}
-
-
-      <!-- ======================================
-           DATE TABS
-           Only visible when multiple dates exist
-      ======================================= -->
-
       {#if dates().length > 1}
-
         <div class="agenda-tabs mt-10">
-
           {#each dates() as date}
-
-            <button
-              type="button"
-              class:active={date === active_tab}
-              on:click={() => selectTab(date)}
-            >
-              <span>
-                {dateFormat(date, 'ccc')}
-              </span>
-
+            <button type="button" class:active={date === active_tab} on:click={() => selectTab(date)}>
+              <span>{dateFormat(date, 'ccc')}</span>
               {dateFormat(date, 'dd LLL')}
             </button>
-
           {/each}
-
         </div>
-
       {/if}
-
-
-
-      <!-- ======================================
-           VENUE TABS
-           Only visible when multiple venues exist
-      ======================================= -->
 
       {#if getActiveDateVenues().length > 1}
-
         <div class="agenda-venue-tabs mt-5">
-
           {#each getActiveDateVenues() as venue}
-
-            <button
-              type="button"
-              class:active={venue === active_venue}
-              on:click={() => selectVenue(venue)}
-            >
+            <button type="button" class:active={venue === active_venue} on:click={() => selectVenue(venue)}>
               {venue}
             </button>
-
           {/each}
-
         </div>
-
       {/if}
 
-
-
-      <!-- ======================================
-           AGENDA
-      ======================================= -->
-
-      <div class="agenda-container mt-16 reveal">
-
-
+      <div class="agenda-container mt-16">
         {#each Object.entries(groupedAgenda()) as [period, sessions]}
-
-
           {#if sessions.length}
-
-
             <div class="agenda-block">
-
-
-              <!-- PERIOD -->
-
               <div class="agenda-period">
-
-                <span>
-                  {period}
-                </span>
-
-                <p>
-                  {periodDescription(period)}
-                </p>
-
+                <span>{period}</span>
+                <p>{periodDescription(period)}</p>
               </div>
-
-
-
-              <!-- EVENTS -->
 
               <div class="agenda-events">
-
-
                 {#each sessions as item}
-
-
-                  <div
-                    class="agenda-event"
-                    class:agenda-event-featured={isFeatured(item)}
-                  >
-
-
-                    <!-- TIME -->
-
-                    <time>
-                      {timeOnly(item.start_time)}
-                    </time>
-
-
-
-                    <!-- CONTENT -->
+                  <div class="agenda-event" class:agenda-event-featured={isFeatured(item)}>
+                    <time>{timeOnly(item.start_time)}</time>
 
                     <div>
-
-
                       {#if item.category}
-
-                        <span class="agenda-category">
-                          {item.category}
-                        </span>
-
+                        <span class="agenda-category">{item.category}</span>
                       {/if}
 
-
-
-                      <h3>
-                        {item.name}
-                      </h3>
-
-
-
-                      <!-- Optional simple time range -->
+                      <h3>{item.name}</h3>
 
                       {#if item.end_time}
-
-                        <p class="agenda-duration">
-                          {timeRange(
-                            item.start_time,
-                            item.end_time
-                          )}
-                        </p>
-
+                        <p class="agenda-duration">{timeRange(item.start_time, item.end_time)}</p>
                       {/if}
-
-
-
-                      <!-- ==================================
-                           EXPANDABLE DETAILS
-                      =================================== -->
 
                       {#if hasDetails(item)}
-
                         <details class="agenda-details">
-
-                          <summary>
-
-                            View session details
-
-                            <span>
-                              ＋
-                            </span>
-
-                          </summary>
-
+                          <summary>View session details <span>＋</span></summary>
 
                           <div class="agenda-details-body">
-
-
-                            <!-- DESCRIPTION -->
-
                             {#if item.description}
-
                               <div class="agenda-markdown">
-                                <SvelteMarkdown
-                                  source={item.description}
-                                />
+                                <SvelteMarkdown source={item.description} />
                               </div>
-
                             {/if}
-
-
-
-                            <!-- SPEAKERS -->
 
                             {#if hasSpeakers(item.speakers)}
-
                               <div class="agenda-speakers">
-
-
                                 {#each Object.entries(item.speakers) as [speakerCategory, speakerList]}
-
-
                                   {#if speakerList?.length}
-
                                     <div class="agenda-speaker-group">
-
-
                                       {#if speakerCategory}
-
-                                        <span class="agenda-speaker-category">
-                                          {speakerCategory}
-                                        </span>
-
+                                        <span class="agenda-speaker-category">{speakerCategory}</span>
                                       {/if}
 
-
-
                                       {#each speakerList as speaker}
-
                                         <div class="agenda-speaker">
-
-
                                           {#if speaker.photo}
-
-                                            <img
-                                              src={speaker.photo}
-                                              alt={speaker.name}
-                                              loading="lazy"
-                                            />
-
+                                            <img src={speaker.photo} alt={speaker.name} loading="lazy" />
                                           {/if}
 
-
-
                                           <div>
-
                                             {#if speaker.linkedin}
-
-                                              <a
-                                                href={speaker.linkedin}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                {speaker.name}
-                                              </a>
-
+                                              <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">{speaker.name}</a>
                                             {:else}
-
-                                              <strong>
-                                                {speaker.name}
-                                              </strong>
-
+                                              <strong>{speaker.name}</strong>
                                             {/if}
-
 
                                             {#if speakerRole(speaker)}
-
-                                              <p>
-                                                {speakerRole(speaker)}
-                                              </p>
-
+                                              <p>{speakerRole(speaker)}</p>
                                             {/if}
-
                                           </div>
-
                                         </div>
-
                                       {/each}
-
-
                                     </div>
-
                                   {/if}
-
-
                                 {/each}
-
                               </div>
-
                             {/if}
-
-
                           </div>
-
                         </details>
-
                       {/if}
-
-
                     </div>
-
                   </div>
-
-
                 {/each}
-
-
               </div>
-
             </div>
-
-
           {/if}
-
-
         {/each}
-
-
       </div>
-
     {/if}
-
   </div>
-
 </section>

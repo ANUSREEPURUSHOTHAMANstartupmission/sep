@@ -40,20 +40,20 @@
 
 </script>
 
-<div class="flex  flex-wrap space-x-4 gap-4 mb-2">
-	<div class="counter rounded-2xl text-black  font-bold   text-xl    flex flex-col ">
+<div class="flex  flex-wrap space-x-4 justify-center gap-4 mb-2 ">
+	<div class="counter rounded-2xl text-white  font-bold   text-xl    flex flex-col ">
 		{dayText}
 		<div class="text-xs font-light font-sans">Days</div>
 	</div>
-	<div class=" counter rounded-2xl text-black  font-bold   text-xl   flex flex-col ">
+	<div class=" counter rounded-2xl text-white  font-bold   text-xl   flex flex-col ">
 		{hourText}
 		<div class="text-xs font-light font-sans">Hours</div>
 	</div>
-	<div class="counter rounded-2xl text-black  font-bold   text-xl   flex flex-col ">
+	<div class="counter rounded-2xl text-white  font-bold   text-xl   flex flex-col ">
 		{minText}
 		<div class="text-xs font-light font-sans">Mins</div>
 	</div>
-	<div class="counter rounded-2xl text-black  font-bold   text-xl   flex flex-col ">
+	<div class="counter rounded-2xl text-white  font-bold   text-xl   flex flex-col ">
 		{secText}
 		<div class="text-xs font-light font-sans">Secs</div>
 	</div>
